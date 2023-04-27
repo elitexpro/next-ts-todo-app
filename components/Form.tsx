@@ -24,8 +24,18 @@ const Form = () => {
       return;
     }
 
-    const newTask: Task = { ...task, id: Date.now() };
-    setTaskList([...taskList, newTask]);
+    if (task.id) {
+      // Update existing task
+      const updatedTaskList = taskList.map((t) =>
+        t.id === task.id ? { ...task } : t
+      );
+      setTaskList(updatedTaskList);
+    } else {
+      // Create new task
+      const newTask: Task = { ...task, id: Date.now() };
+      setTaskList([...taskList, newTask]);
+    }
+
     setTask({ id: 0, name: "", description: "", completed: false });
   };
 
@@ -38,7 +48,10 @@ const Form = () => {
     const taskToEdit = taskList.find((task) => task.id === id);
     if (taskToEdit) {
       setTask(taskToEdit);
-      handleTaskDelete(id);
+      const updatedTaskList = taskList.map((task) =>
+        task.id === id ? taskToEdit : task
+      );
+      setTaskList(updatedTaskList);
     }
   };
 
