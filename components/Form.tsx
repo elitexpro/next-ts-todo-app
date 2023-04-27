@@ -18,6 +18,12 @@ const Form = () => {
   const [taskList, setTaskList] = useState<Task[]>([]);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Check if required fields are not empty
+    if (!task.name.trim() || !task.description.trim()) {
+      return;
+    }
+
     const newTask: Task = { ...task, id: Date.now() };
     setTaskList([...taskList, newTask]);
     setTask({ id: 0, name: "", description: "", completed: false });
