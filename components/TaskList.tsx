@@ -19,18 +19,26 @@ const TaskList = ({
 }: TaskListProps) => {
   return (
     <div className="overflow-x-auto">
-      <div className="min-w-screen   flex items-center justify-center  font-sans overflow-hidden">
+      <div className="min-w-screen flex items-center justify-center font-sans overflow-hidden">
         <div className="w-full lg:w-5/6">
-          <div className="bg-white shadow-md rounded my-6">
+          <div className="bg-white shadow-md rounded my-6 overflow-y-auto ">
             {tasks.length > 0 && (
               <table className="min-w-max w-full table-auto">
                 <thead>
                   <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                     <th className="py-3 px-6 text-left"></th>
-                    <th className="py-3 px-6 text-left">Name</th>
-                    <th className="py-3 px-6 text-center">Description</th>
-                    <th className="py-3 px-6 text-center">Status</th>
-                    <th className="py-3 px-6 text-center">Actions</th>
+                    <th className="py-3 px-6 text-left sm:text-sm sm:px-2">
+                      Name
+                    </th>
+                    <th className="py-3 px-6 text-center sm:text-sm sm:px-2">
+                      Description
+                    </th>
+                    <th className="py-3 px-6 text-center sm:text-sm sm:px-2">
+                      Status
+                    </th>
+                    <th className="py-3 px-6 text-center sm:text-sm sm:px-2">
+                      Actions
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="text-gray-600 text-sm font-light">
