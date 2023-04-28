@@ -1,9 +1,11 @@
-import Form from "@/components/Form"
+import Form from "@/components/Form";
 
 const index = () => {
   return (
-    <><Form/></>
-  )
-}
+    <>
+      <Form />
+    </>
+  );
+};
 
-export default index
+export default index;
