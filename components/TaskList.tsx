@@ -17,7 +17,6 @@ const TaskList = ({
   onTaskEdit,
   onTaskCheck,
 }: TaskListProps) => {
-  console.log(tasks, "tasks");
   return (
     <div className="mt-5">
       <h1 className="font-semibold text-2xl ">Task List</h1>
@@ -37,13 +36,13 @@ const TaskList = ({
             </div>
             <div className="flex flex-row gap-4">
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
                 onClick={() => onTaskEdit(task.id)}
               >
                 Edit
               </button>
               <button
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md"
                 onClick={() => onTaskDelete(task.id)}
               >
                 Delete
